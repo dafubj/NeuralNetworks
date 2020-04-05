@@ -10,7 +10,7 @@ and omits many desirable features.
 """
 
 #### Libraries
-# Standard library test
+# Standard library
 import random
 
 # Third-party libraries
