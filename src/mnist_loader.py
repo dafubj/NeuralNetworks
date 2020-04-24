@@ -38,15 +38,18 @@ def load_data():
     helpful to modify the format of the ``training_data`` a little.
     That's done in the wrapper function ``load_data_wrapper()``, see
     below.
+
     pickle.load(f,encode): Python 3 默认是utf8编码格式
+
     """
+
     f = gzip.open('../data/mnist.pkl.gz', 'rb')
     training_data, validation_data, test_data = pickle.load(f,encoding="bytes")
     f.close()
     return (training_data, validation_data, test_data)
 
 def load_data_wrapper():
-    """Return a tuple containing ``(training_data, validation_data,
+    """Return a tuple(元组，数组) containing ``(training_data, validation_data,
     test_data)``. Based on ``load_data``, but the format is more
     convenient for use in our implementation of neural networks.
 
