@@ -16,6 +16,7 @@ import random
 # Third-party libraries
 import numpy as np
 
+
 class Network(object):
 
     def __init__(self, sizes):
@@ -28,12 +29,14 @@ class Network(object):
         distribution with mean 0, and variance 1.  Note that the first
         layer is assumed to be an input layer, and by convention we
         won't set any biases for those neurons, since biases are only
-        ever used in computing the outputs from later layers."""
+        ever used in computing the outputs from later layers.
+        net = network.Network([784, 30, 10])  """
         self.num_layers = len(sizes)
         self.sizes = sizes
-        self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
+        self.biases = [np.random.randn(y, 1)
+                       for y in sizes[1:]]
         self.weights = [np.random.randn(y, x)
-                        for x, y in zip(sizes[:-1], sizes[1:])]
+                       for x, y in zip(sizes[:-1], sizes[1:])]
 
     def feedforward(self, a):
         """Return the output of the network if ``a`` is input."""
